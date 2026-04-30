@@ -68,7 +68,7 @@
       { \nwpuCoverInfoLabelWidth }
       { \nwpuCoverInfoRowHeight }
       { \bfseries #1 }
-    & \__nwpu_cover_center_cell:nnn
+    & \__nwpu_cover_visual_bottom_cell:nnn
       { \nwpuCoverInfoValueWidth }
       { \nwpuCoverInfoRowHeight }
       { \bfseries #2 }

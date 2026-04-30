@@ -230,19 +230,19 @@
 \cs_new_protected:Npn \nwpuEngInnerTextFont { \fEng \fontsize{\nwpuFontPointXiaosan}{\nwpuLineHeightXiaosan}\selectfont } % 英文内封正文字体
 
 %%=== 本科封面尺寸 =======================================================
-\cs_new:Npn \nwpuBachelorLogoWidth { 10cm }                 % 本科封面校徽宽度
-\cs_new:Npn \nwpuBachelorTitleUnderlineWidth { 8cm }        % 本科封面题目下划线宽度
-\cs_new:Npn \nwpuBachelorInfoUnderlineWidth { 5.5cm }       % 本科封面专业/姓名等下划线宽度
+\cs_new:Npn \nwpuBachelorLogoWidth { 9cm }                 % 本科封面校徽宽度
+\cs_new:Npn \nwpuBachelorTitleUnderlineWidth { 12cm }        % 本科封面题目下划线宽度
+\cs_new:Npn \nwpuBachelorInfoUnderlineWidth { 7cm }       % 本科封面专业/姓名等下划线宽度
 \cs_new:Npn \nwpuBachelorTitleGap { 0.2cm }                 % 本科封面“题目”和下划线间距
-\cs_new:Npn \nwpuBachelorTopSkip { 2.3cm }                  % 本科封面顶部空白
-\cs_new:Npn \nwpuBachelorAfterLogoSkip { 1.3cm }            % 本科封面校徽后距
-\cs_new:Npn \nwpuBachelorAfterDocTitleSkip { 3.5cm }        % 本科封面文档标题后距
-\cs_new:Npn \nwpuBachelorAfterTitleSkip { 1.5cm }           % 本科封面题目后距
-\cs_new:Npn \nwpuBachelorInfoRowSkip { 1.1cm }              % 本科封面信息行之间距离
+\cs_new:Npn \nwpuBachelorTopSkip { 2.2cm }                  % 本科封面顶部空白
+\cs_new:Npn \nwpuBachelorAfterLogoSkip { 0.5cm }            % 本科封面校徽后距
+\cs_new:Npn \nwpuBachelorAfterDocTitleSkip { 5cm }        % 本科封面文档标题后距
+\cs_new:Npn \nwpuBachelorAfterTitleSkip { 2cm }           % 本科封面题目后距
+\cs_new:Npn \nwpuBachelorInfoRowSkip { 1.4cm }              % 本科封面信息行之间距离
 
 %%=== 本科封面字体 =======================================================
 \cs_new_protected:Npn \nwpuBachelorDocTitleFont { \fSong \fontsize{\nwpuFontPointChuhao}{\nwpuLineHeightChuhao}\selectfont } % 本科封面文档标题字体
-\cs_new_protected:Npn \nwpuBachelorTitleFont { \fHei \fontsize{\nwpuFontPointSanhao}{\nwpuLineHeightSanhao}\selectfont } % 本科封面题目行字体
+\cs_new_protected:Npn \nwpuBachelorTitleFont { \fHei\bfseries \fontsize{\nwpuFontPointSanhao}{\nwpuLineHeightSanhao}\selectfont } % 本科封面题目行字体
 \cs_new_protected:Npn \nwpuBachelorInfoFont { \fSong \fontsize{\nwpuFontPointSihao}{\nwpuLineHeightSihao}\selectfont } % 本科封面信息行字体
 
 %%=== 评阅人与答辩委员会页尺寸 ===========================================
