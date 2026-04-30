@@ -36,7 +36,7 @@
     {\nwpuChapterFont}{\nwpuChapterLabelSep}{\nwpuChapterFont}
 }
 \cs_new_protected:Npn \nwpu@apply@abstract@eng@format {
-  \titleformat{\chapter}[hang]{\normalfont\fEng\bfseries\fontsize{\nwpuFontPointSanhao}{\nwpuBachelorLineHeight}\selectfont\filcenter}%
+  \titleformat{\chapter}[hang]{\normalfont\fEng\fontsize{\nwpuFontPointSanhao}{\nwpuBachelorLineHeight}\selectfont\filcenter}%
     {}{0pt}{}
 }
 %%-----------------------------------------------------------------------------

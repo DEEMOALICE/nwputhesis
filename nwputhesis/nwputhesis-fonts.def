@@ -7,11 +7,8 @@
 %% 定义默认字体（Windows 字体）
 \cs_new:Npn \defaultSog {SimSun}                            % 宋体，用于正文
 \cs_new:Npn \defaultHei {SimHei}                            % 黑体，用于标题
-\cs_new:Npn \defaultKai {KaiTi}                             % 楷体，一般用于强调
-\cs_new:Npn \defaultFag {FangSong}                          % 仿宋，一般用于强调
 \cs_new:Npn \defaultEngFont {Times~New~Roman}               % 英文文本默认字体
 \cs_new:Npn \defaultEngSansFont {TeX~Gyre~Heros}             % 英文 Sans 字体
-\cs_new:Npn \codeFont {Consolas}                            % 等宽英文默认字体
 %%-----------------------------------------------------------------------------%
 % 根据系统和字体可用性设置字体
 \cs_new_protected:Npn \npu@set@fandol@fonts
@@ -20,21 +17,15 @@
     \bool_set_true:N \l__nwpu_font_using_fandol_bool
     \cs_set:Npn \defaultSog {FandolSong}
     \cs_set:Npn \defaultHei {FandolHei}
-    \cs_set:Npn \defaultKai {FandolKai}
-    \cs_set:Npn \defaultFag {FandolFang}
     \cs_set:Npn \defaultEngFont {TeX~Gyre~Termes}
     \cs_set:Npn \defaultEngSansFont {TeX~Gyre~Heros}
-    \cs_set:Npn \codeFont {DejaVu~Sans~Mono}
   }
 \cs_new_protected:Npn \npu@set@local@fonts
   {
     \typeout{[nwputhesis]~Using~local~fonts~from~fonts/~directory.}
     \cs_set:Npn \defaultSog {SimSun}
     \cs_set:Npn \defaultHei {SimHei}
-    \cs_set:Npn \defaultKai {KaiTi}
-    \cs_set:Npn \defaultFag {FangSong}
     \cs_set:Npn \defaultEngFont {Times~New~Roman}
-    \cs_set:Npn \codeFont {Consolas}
     \bool_set_true:N \l__nwpu_font_local_bool
   }
 \cs_new_protected:Npn \npu@set@windows@fonts
@@ -42,11 +33,8 @@
     \typeout{[nwputhesis]~Using~Windows~fonts.}
     \cs_set:Npn \defaultSog {SimSun}
     \cs_set:Npn \defaultHei {SimHei}
-    \cs_set:Npn \defaultKai {KaiTi}
-    \cs_set:Npn \defaultFag {FangSong}
     \cs_set:Npn \defaultEngFont {Times~New~Roman}
     \cs_set:Npn \defaultEngSansFont {\defaultHei}             % Windows 无 TeX Gyre，用黑体代替
-    \cs_set:Npn \codeFont {Consolas}
   }
 \bool_new:N \l__nwpu_windows_fonts_available_bool
 \cs_new_protected:Npn \__nwpu_check_windows_font:n #1
@@ -60,10 +48,7 @@
     \bool_set_true:N \l__nwpu_windows_fonts_available_bool
     \__nwpu_check_windows_font:n { SimSun }
     \__nwpu_check_windows_font:n { SimHei }
-    \__nwpu_check_windows_font:n { KaiTi }
-    \__nwpu_check_windows_font:n { FangSong }
     \__nwpu_check_windows_font:n { Times~New~Roman }
-    \__nwpu_check_windows_font:n { Consolas }
     \bool_if:NTF \l__nwpu_windows_fonts_available_bool
       { \npu@set@windows@fonts }
       {
@@ -91,15 +76,8 @@
         Extension   = .otf,
         UprightFont = *-Regular,
         BoldFont    = *-Bold,
-        ItalicFont  = FandolKai-Regular,
-        ItalicFeatures = {Extension = .otf},
     ]
     \setCJKsansfont{FandolHei}[
-        Extension   = .otf,
-        UprightFont = *-Regular,
-        BoldFont    = *-Bold,
-    ]
-    \setCJKmonofont{FandolHei}[
         Extension   = .otf,
         UprightFont = *-Regular,
         BoldFont    = *-Bold,
@@ -114,14 +92,6 @@
         UprightFont = *-Regular,
         BoldFont    = *-Bold,
     ]
-    \setCJKfamilyfont{kai}{FandolKai}[
-        Extension   = .otf,
-        UprightFont = *-Regular,
-    ]
-    \setCJKfamilyfont{fang}{FandolFang}[
-        Extension   = .otf,
-        UprightFont = *-Regular,
-    ]
     \newfontfamily\engfont{TeX~Gyre~Termes}[
         UprightFont    = texgyretermes-regular.otf,
         BoldFont       = texgyretermes-bold.otf,
@@ -135,13 +105,6 @@
         ItalicFont     = texgyreheros-italic.otf,
         BoldItalicFont = texgyreheros-bolditalic.otf,
     ]
-    \setmonofont{TeX~Gyre~Cursor}[
-        Scale         = 0.9,
-        UprightFont   = texgyrecursor-regular.otf,
-        BoldFont      = texgyrecursor-bold.otf,
-        ItalicFont    = texgyrecursor-italic.otf,
-        BoldItalicFont= texgyrecursor-bolditalic.otf,
-    ]
     \setmainfont{TeX~Gyre~Termes}[
         UprightFont    = texgyretermes-regular.otf,
         BoldFont       = texgyretermes-bold.otf,
@@ -152,39 +115,28 @@
   {
     \nwpu_if_local_fonts:TF
       {
-        % 从本地 fonts 目录加载字体
-        \setCJKmainfont[Path=fonts/, ItalicFont=simkai.ttf, AutoFakeBold]{simsun.ttc}
-        \setCJKsansfont[Path=fonts/, ItalicFont=simkai.ttf, AutoFakeBold]{simhei.ttf}
-        \setCJKmonofont[Path=fonts/, AutoFakeBold]{simhei.ttf}
+        \setCJKmainfont[Path=fonts/, AutoFakeBold]{simsun.ttc}
+        \setCJKsansfont[Path=fonts/, AutoFakeBold]{simhei.ttf}
         \setCJKfamilyfont{song}[Path=fonts/, AutoFakeBold]{simsun.ttc}
         \setCJKfamilyfont{hei}[Path=fonts/, AutoFakeBold]{simhei.ttf}
-        \setCJKfamilyfont{kai}[Path=fonts/]{simkai.ttf}
-        \setCJKfamilyfont{fang}[Path=fonts/]{simfang.ttf}
         \setCJKfamilyfont{eng}[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
         \cs_new_protected:Npn \fEng {\CJKfamily{eng}}
         \setsansfont[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
-        \setmonofont[Path=fonts/, BoldFont=consolab.ttf, ItalicFont=consolai.ttf, BoldItalicFont=consolaz.ttf]{consola.ttf}
         \setmainfont[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
       }
       {
-        \setCJKmainfont[ItalicFont=\defaultKai, AutoFakeBold]{\defaultSog}
-        \setCJKsansfont[ItalicFont=\defaultKai, AutoFakeBold]{\defaultHei}
-        \setCJKmonofont[AutoFakeBold]{\defaultHei}
-        \setCJKfamilyfont{song}{\defaultSog}                        % 设置 CJK 字体族
-        \setCJKfamilyfont{hei}{\defaultHei}                         %
-        \setCJKfamilyfont{kai}{\defaultKai}                         %
-        \setCJKfamilyfont{fang}{\defaultFag}                        %
-        \setCJKfamilyfont{eng}{\defaultEngFont}                     %
-        \cs_new_protected:Npn \fEng {\CJKfamily{eng}}               % 英文: fEng
-        \setsansfont{\defaultEngSansFont}                           %
-        \setmonofont{\codeFont}                                     %
-        \setmainfont{\defaultEngFont}                               %
+        \setCJKmainfont[AutoFakeBold]{\defaultSog}
+        \setCJKsansfont[AutoFakeBold]{\defaultHei}
+        \setCJKfamilyfont{song}{\defaultSog}
+        \setCJKfamilyfont{hei}{\defaultHei}
+        \setCJKfamilyfont{eng}{\defaultEngFont}
+        \cs_new_protected:Npn \fEng {\CJKfamily{eng}}
+        \setsansfont{\defaultEngSansFont}
+        \setmainfont{\defaultEngFont}
       }
   }
 \cs_new_protected:Npn \fSong {\CJKfamily{song}}               % 宋体: fSong
 \cs_new_protected:Npn \fHei  {\CJKfamily{hei}}                % 黑体: fHei
-\cs_new_protected:Npn \fKai  {\CJKfamily{kai}}                % 楷体: fKai
-\cs_new_protected:Npn \fFang {\CJKfamily{fang}}               % 仿宋: fFang
 \nwpu_if_bachelor:TF                                           % 本科论文需要 CJKnumb
   { \RequirePackage{CJKnumb} }                                 % 中文数字
   {}
