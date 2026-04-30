@@ -172,6 +172,9 @@
 \nwpu_if_bachelor:TF{%
     \DeclareStyleSourcemap{
         \maps[datatype=bibtex]{
+            \map{
+                \step[fieldsource=journal, fieldtarget=journaltitle]
+            }
             \map[overwrite]{
                 \pertype{conference}
                 \step[fieldset=usera, fieldvalue={A}]
@@ -247,6 +250,8 @@
         \usebibmacro{annotation}\usebibmacro{finentry}%
     }
 }{}
+\ExplSyntaxOff
+\ExplSyntaxOn
 \cs_new_protected:Npn \nwpu@bibitemcmd {%
     \addvspace{\bibitemsep}%
     \leavevmode%
