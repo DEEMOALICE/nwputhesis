@@ -399,7 +399,7 @@
             \nwpuBachelorDocTitleFont {\bfseries 本科毕业设计（论文）}%
             \vskip \nwpuBachelorAfterDocTitleSkip            %
                 {                                               %
-                    \nwpuBachelorTitleFont 题~~目 \hspace{\nwpuBachelorTitleGap}\coverunderline[\nwpuBachelorTitleUnderlineWidth]{\nwpu@chs@title} %
+                    \nwpuBachelorTitleFont 题\ 目 \hspace{\nwpuBachelorTitleGap}\coverunderline[\nwpuBachelorTitleUnderlineWidth]{\nwpu@chs@title} %
                 }                                               %
             \vskip \nwpuBachelorAfterTitleSkip               %
                 {                                               %

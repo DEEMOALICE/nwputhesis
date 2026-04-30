@@ -278,4 +278,17 @@
     ]                                                       %
     \cleardoublepage                                        %
 }                                                           %
+\DeclareBibliographyCategory{accomplishments}
+\clist_new:N \l__nwpu_pub_keys_clist
+\NewDocumentCommand{\addpub}{m}{%
+    \clist_put_right:Nn \l__nwpu_pub_keys_clist {#1}%
+}
+\NewDocumentCommand{\printaccomplishments}{}{%
+    \begin{accomplishments}
+    \begin{refsection}
+        \clist_map_inline:Nn \l__nwpu_pub_keys_clist {\nocite{##1}}%
+        \nwpu@oldprintbibliography[heading=none]%
+    \end{refsection}
+    \end{accomplishments}
+}
 \ExplSyntaxOff

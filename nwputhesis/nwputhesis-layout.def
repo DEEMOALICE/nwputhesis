@@ -199,7 +199,7 @@
         font=nwpuTableCaption,
         aboveskip=\nwpuBachelorCaptionAboveSkip,
         belowskip=\nwpuBachelorCaptionBelowSkip}
-    \captionsetup[subfigure]{labelformat=simple, aboveskip=\nwpuCaptionAboveSkip, belowskip=\nwpuSubcaptionBelowSkip}
+    \captionsetup[subfigure]{labelformat=simple, font=nwpuSubcaption, aboveskip=\nwpuBachelorSubcaptionAboveSkip, belowskip=\nwpuBachelorSubcaptionBelowSkip}
 }
 {
     \setlength{\textfloatsep}{\nwpuTextFloatSep}              %
