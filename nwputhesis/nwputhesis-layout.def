@@ -195,6 +195,10 @@
         font=nwpuFigureCaption,
         aboveskip=\nwpuBachelorCaptionAboveSkip,
         belowskip=\nwpuBachelorCaptionBelowSkip}
+    \captionsetup[algorithm]{%
+        font=nwpuTableCaption,
+        aboveskip=\nwpuBachelorCaptionAboveSkip,
+        belowskip=\nwpuBachelorCaptionBelowSkip}
     \captionsetup[subfigure]{labelformat=simple, aboveskip=\nwpuCaptionAboveSkip, belowskip=\nwpuSubcaptionBelowSkip}
 }
 {
@@ -215,6 +219,14 @@
     \AddToHook{env/tabular/begin}{\linespread{\nwpuGraduateTableLineSpread}\selectfont}  % 研究生表格为单倍行距
     \AddToHook{env/tabularx/begin}{\linespread{\nwpuGraduateTableLineSpread}\selectfont} %
     \AddToHook{env/longtable/begin}{\linespread{\nwpuGraduateTableLineSpread}\selectfont}%
+  }
+\nwpu_if_bachelor:T
+  {
+    \AddToHook{env/algorithm/begin}{\linespread{1.5}\selectfont} % 本科算法环境行距
+  }
+\nwpu_if_graduate:T
+  {
+    \AddToHook{env/algorithm/begin}{\linespread{1.3}\selectfont} % 研究生算法环境行距
   }
 \bool_new:N \g__nwpu_table_content_font_hook_bool
 \cs_new_protected:Npn \nwpu_enable_table_content_font:       % 正文表格内容为五号

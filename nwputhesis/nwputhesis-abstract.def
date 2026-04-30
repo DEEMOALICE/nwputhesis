@@ -88,7 +88,7 @@
     \vfill\nwpuFundingFont
     \nwpu_if_bachelor:TF
       { \noindent }
-      { \indent }
+      { \noindent }
     \nwpu@eng@funding\par\cleardoublepage
   }
 
