@@ -24,12 +24,12 @@
 - 本模板版本号采用 `X.Y.Z` 形式：
 - `X` 表示重大更新，例如跟进学校发布的新模板格式。
 - `Y` 表示影响模板使用方式的更新。
-- `Z` 表示格式修复或其它不影响模板使用方式的更新。
+- `Z` 表示格式修复或其它不影响模板使用方式的修复。
 
 ## 使用说明
 获取模板有两种方式（二选一）：
 - **Fork 仓库**（推荐）：方便后续通过 Git 跟踪更新。
-- **下载 Release**：直接下载 [最新 Release 版本](https://github.com/1195343015/nwputhesis/releases/latest)，体积更小且不含开发测试文件。
+- **下载 Release**：直接下载 [最新 Release 版本](https://github.com/1195343015/nwputhesis/releases/latest)。
 
 - 非 Windows 系统用户需要从仓库中自行下载 Windows 字体。
 
