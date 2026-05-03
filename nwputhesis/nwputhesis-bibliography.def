@@ -195,6 +195,16 @@
     }
     \DeclareFieldFormat[nwpubachelorconf]{title}{#1}
     \DeclareFieldFormat[nwpubachelorconf]{booktitle}{#1}
+    \DeclareFieldFormat[nwpubachelorconf]{volume}{#1}
+    \newbibmacro*{nwpu:bachelorconfvolume}{%
+        \iffieldundef{volume}
+            {}
+            {%
+                \iffieldequalstr{userd}{chinese}
+                    {：第~\printfield{volume}~卷}
+                    {\addcolon\space vol.\space\printfield{volume}}%
+            }%
+    }
     \newbibmacro*{nwpu:bachelorbooktitle}{%
         \ifboolexpr{
             test {\iffieldundef{booktitle}}
@@ -205,14 +215,15 @@
             {\printtext[booktitle]{\bibtitlefont%
                 \printfield[booktitlecase]{booktitle}%
                 \iffieldundef{booksubtitle}{}{\setunit{\subtitlepunct}\printfield[booktitlecase]{booksubtitle}}%
+                \usebibmacro{nwpu:bachelorconfvolume}%
                 \printtext{[C]}%
             }}%
     }
     \newbibmacro*{nwpu:bachelorin}{%
         \setunit{\adddot\addspace}%
         \iffieldequalstr{userd}{chinese}
-            {\printtext{\bibstring{incn}}}
-            {\printtext{\bibstring{in}}}%
+            {\printtext{见\addcolon\space}}
+            {\printtext{In\addcolon\space}}%
     }
     \DeclareBibliographyDriver{nwpubachelorconf}{%
         \usebibmacro{bibindex}%
@@ -227,7 +238,7 @@
         }{\newunit}%
         \iffieldundef{series}{}{\usebibmacro{series+number}\setunit{\addcolon\addspace}}%
         \usebibmacro{nwpu:bachelorbooktitle}%
-        \iffieldundef{volume}{}{\setunit{\addcolon\addspace}\printfield{volume}}%
+        % \iffieldundef{volume}{}{\setunit{\addcolon\addspace}\printfield{volume}}%
         \iffieldundef{number}{}{\setunit{\addcolon\addspace}\printfield{number}}%
         \newunit\newblock%
         \printfield{edition}%
