@@ -184,6 +184,50 @@
     {}%
   \usebibmacro{annotation}\usebibmacro{finentry}%
 }
+\newbibmacro*{nwpu:otherdate}{%
+  \iffieldundef{year}
+    {}
+    {\thefield{year}%
+     \iffieldundef{month}
+       {}
+       {-\ifnum\thefield{month}<10 0\fi\thefield{month}%
+        \iffieldundef{day}
+          {}
+          {-\ifnum\thefield{day}<10 0\fi\thefield{day}}}}%
+}
+\newbibmacro*{nwpu:otherurldate}{%
+  \iffieldundef{urlyear}
+    {}
+    {\thefield{urlyear}%
+     \iffieldundef{urlmonth}
+       {}
+       {-\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth}%
+        \iffieldundef{urlday}
+          {}
+          {-\ifnum\thefield{urlday}<10 0\fi\thefield{urlday}}}}%
+}
+\newbibmacro*{nwpu:otherdate+urldate}{%
+  \ifboolexpr{
+      test {\iffieldundef{year}}
+      and
+      test {\iffieldundef{urlyear}}
+  }{}{%
+    \printtext{%
+      \begingroup
+      \xeCJKsetup{CJKecglue={}}%
+      \usebibmacro{nwpu:otherdate}%
+      \ifboolexpr{
+          test {\iffieldundef{year}}
+          and
+          test {\iffieldundef{month}}
+          and
+          test {\iffieldundef{day}}
+      }{}{\iffieldundef{urlyear}{}{／}}%
+      \usebibmacro{nwpu:otherurldate}%
+      \endgroup
+    }%
+  }%
+}
 \DeclareBibliographyDriver{other}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
@@ -206,15 +250,10 @@
   \newunit
   \printfield{note}%
   \newunit\newblock
-  \ifboolexpr{
-      not test {\iffieldundef{year}}
-      or
-      not test {\iffieldundef{month}}
-      or
-      not test {\iffieldundef{day}}
-  }{\usebibmacro{newsdate}}{}%
+  \usebibmacro{nwpu:otherdate+urldate}%
   \usebibmacro{chapter+pages}%
-  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \printfield{url}%
   \newunit\newblock
   \usebibmacro{addendum+pubstate}%
   \setunit{\bibpagerefpunct}\newblock
