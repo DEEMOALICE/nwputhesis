@@ -162,7 +162,13 @@
     sorting=none
 ]{biblatex}                                                 % 参考文献
 \str_if_eq:VnT \l__nwpu_bibstyle_tl { gb7714-2025 } {
-    \ExecuteBibliographyOptions{gbpunctwidth=bylan}
+    \nwpu_if_bachelor:TF
+        {
+            \ExecuteBibliographyOptions{gbpunctwidth=bylan}
+            \cs_set:Npn \CharParenLeft {(}
+            \cs_set:Npn \CharParenRight {)\allowbreak}
+        }
+        { \ExecuteBibliographyOptions{gbpunctwidth=bylan} }
 }
 \nwpu_if_graduate:TF{%
     \DefineBibliographyStrings{english}{in={}}%
