@@ -362,11 +362,6 @@
     \leavevmode
     \str_case:Vn \l__nwpu_bibindent_tl
       {
-        { auto } {
-          \nwpu_if_bachelor:TF
-            { \hspace*{0pt} }
-            { \hspace*{\l__nwpu_bib_firstline_indent_dim} }
-        }
         { firstline } { \hspace*{\l__nwpu_bib_firstline_indent_dim} }
         { none }      { \hspace*{0pt} }
       }
