@@ -294,7 +294,7 @@
 \cs_new:Npn \nwpuGraduateTocDotSep { 3pt }                  % 研究生目录点线间距
 \cs_new:Npn \nwpuTocChapterBeforeSkip { 0.2\baselineskip }  % 目录章条目前距
 \cs_new:Npn \nwpuBachelorTocChapterLabelOffset { 3.8em }    % 本科目录章标题文本起始偏移
-\cs_new:Npn \nwpuGraduateTocChapterLabelOffset { 3.5em }    % 研究生目录章标题文本起始偏移
+\cs_new:Npn \nwpuGraduateTocChapterLabelOffset { 4em }    % 研究生目录章标题文本起始偏移
 \cs_new:Npn \nwpuTocLeaderSep { .3pc }                      % 目录章条目点线间距
 \cs_new:Npn \nwpuHeaderTopRuleRaise { .7\baselineskip }     % 页眉上线垂直抬升
 \cs_new:Npn \nwpuGraduateHeaderTopRuleWidth { 3.4pt }       % 研究生页眉粗线宽度
