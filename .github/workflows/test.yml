@@ -10,7 +10,7 @@ on:
       - ".gitignore"
       - ".github/ISSUE_TEMPLATE/**"
       - ".vscode/**"
-      - "master.pdf"
+      - "graduate.pdf"
   pull_request:
     paths-ignore:
       - "README.md"
@@ -20,7 +20,7 @@ on:
       - ".gitignore"
       - ".github/ISSUE_TEMPLATE/**"
       - ".vscode/**"
-      - "master.pdf"
+      - "graduate.pdf"
   workflow_dispatch:
 
 env:
@@ -61,7 +61,7 @@ jobs:
 
       - name: Build document
         run: |
-          sed -i.bak 's/fontset = windows/fontset = fandol/' master.tex
+          sed -i.bak 's/fontset = windows/fontset = fandol/' graduate.tex
           sed -i.bak 's/fontset = windows/fontset = fandol/' bachelor.tex
           make
           latexmk -xelatex bachelor
@@ -71,7 +71,7 @@ jobs:
         with:
           name: nwputhesis-pdf-tl${{ matrix.texlive_version }}
           path: |
-            master.pdf
+            graduate.pdf
             bachelor.pdf
           retention-days: 30
 
@@ -125,7 +125,7 @@ jobs:
 
       - name: Build document
         run: |
-          sed -i.bak 's/fontset = windows/fontset = fandol/' master.tex
+          sed -i.bak 's/fontset = windows/fontset = fandol/' graduate.tex
           sed -i.bak 's/fontset = windows/fontset = fandol/' bachelor.tex
           make
           latexmk -xelatex bachelor
