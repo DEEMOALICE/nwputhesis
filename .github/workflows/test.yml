@@ -4,7 +4,9 @@ on:
   push:
     paths-ignore:
       - "README.md"
-      - "infra/**"
+      - "infra/docs/**"
+      - "infra/tools/**"
+      - "infra/testfiles/**"
       - "LICENSE"
       - ".gitattributes"
       - ".gitignore"
@@ -14,7 +16,9 @@ on:
   pull_request:
     paths-ignore:
       - "README.md"
-      - "infra/**"
+      - "infra/docs/**"
+      - "infra/tools/**"
+      - "infra/testfiles/**"
       - "LICENSE"
       - ".gitattributes"
       - ".gitignore"
