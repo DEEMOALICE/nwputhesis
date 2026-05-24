@@ -6,13 +6,12 @@
 
 [![Test](https://github.com/1195343015/nwputhesis/actions/workflows/test.yml/badge.svg)](https://github.com/1195343015/nwputhesis/actions/workflows/test.yml)
 [![TeX Live](https://img.shields.io/badge/TeX%20Live-2025%20%7C%202026-yellow)](https://www.tug.org/texlive/)
+[![Nightly Built PDF](https://img.shields.io/badge/Preview-预览PDF_-C9CBFF?style=flat&logo=view&logoColor=D9E0EE&labelColor=302D41)](https://nightly.link/1195343015/nwputhesis/workflows/test/main/nwputhesis-pdf-tl2026.zip)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 </div>
 
 > 强烈推荐使用 Typst 模板 **[modern-npu-thesis](https://github.com/1195343015/modern-npu-thesis)**，语法更简洁，编译更快。
-
-本模板支持本硕博，已通过 26 届硕士论文最终版提交。在 TeX Live 2025/2026 下通过 CI 测试，可从 [Actions](https://github.com/1195343015/nwputhesis/actions/workflows/test.yml) 页面点击最新一次通过的运行，在页面底部 **Artifacts** 区域下载编译好的 PDF。
 
 硕博格式符合 [研究生学位论文写作指南](https://gs.nwpu.edu.cn/info/2283/30467.htm)，本科格式符合 [本科毕业设计（论文）撰写规范](https://jiaowu.nwpu.edu.cn/info/1160/24598.htm)。
 
